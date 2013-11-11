@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'PSAutolayout'
   s.version      = '1.0'
+  s.license     = { :type => 'Apache', :file => 'LICENSE' }
   s.homepage     = 'https://github.com/shepting/PSAutolayout'
   s.author      =  {'Steven Hepting' => 'shepting@gmail.com' }
   s.summary      = 'Autolayout utility for source-based layout code.'

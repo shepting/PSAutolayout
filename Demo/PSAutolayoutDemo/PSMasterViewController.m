@@ -7,8 +7,7 @@
 //
 
 #import "PSMasterViewController.h"
-
-#import "PSDetailViewController.h"
+#import "PSKeyboardDemoViewController.h"
 
 @implementation PSMasterViewController
 
@@ -41,13 +40,15 @@
     return cell;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSString *object = self.demoScreens[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+    NSString *demoName = self.demoScreens[indexPath.row];
+    
+    if ([demoName isEqualToString:@"KeyboardHelper"]) {
+        UIViewController *vc = [[PSKeyboardDemoViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
+    NSLog(@"%@", demoName);
 }
 
 @end
