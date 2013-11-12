@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMKeyboardLayoutHelperView : UIView <UIGestureRecognizerDelegate>
+@interface YMKeyboardLayoutHelperView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate>
+
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UITextField *inputView;
 
 @end

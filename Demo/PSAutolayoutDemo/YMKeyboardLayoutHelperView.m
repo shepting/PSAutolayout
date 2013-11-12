@@ -13,6 +13,11 @@
 @property (nonatomic) CGFloat duration;
 @property (nonatomic) UIViewAnimationCurve animationCurve;
 @property (nonatomic) NSLayoutConstraint *heightConstraint;
+@property (nonatomic) UIGestureRecognizer *panRecognizer;
+@property (nonatomic) UIGestureRecognizer *tapRecognizer;
+@property (nonatomic) UIView *inputAccessoryView;
+@property (nonatomic, weak) UIView *keyboard;
+@property (nonatomic) CGPoint originalKeyboardOrigin;
 @end
 
 @implementation YMKeyboardLayoutHelperView
@@ -25,6 +30,7 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
         
         NSDictionary *views = @{@"self": self};
         self.heightConstraint = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:[self(0)]" options:0 metrics:nil views:views] lastObject];
@@ -51,7 +57,15 @@
     self.duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     self.heightConstraint.constant = CGRectGetHeight(convertedRect);
     
+    
     [self animateSizeChange];
+}
+
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+    self.keyboard = self.inputView.inputAccessoryView.superview;
+    self.originalKeyboardOrigin = self.keyboard.frame.origin;
+
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
@@ -59,6 +73,54 @@
     self.heightConstraint.constant = 0.0f;
     
     [self animateSizeChange];
+    
+    [self.scrollView removeGestureRecognizer:self.panRecognizer];
+}
+
+#pragma mark - Panning
+
+- (void)setScrollView:(UIScrollView *)scrollView
+{
+    // Register for gesture recognizer calls
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureDidChange:)];
+    [panGesture setMinimumNumberOfTouches:1];
+    [panGesture setDelegate:self];
+    [panGesture setCancelsTouchesInView:NO];
+    self.panRecognizer = panGesture;
+    [scrollView addGestureRecognizer:self.panRecognizer];
+    
+    _scrollView = scrollView;
+}
+
+- (void)setInputView:(UITextField *)inputView
+{
+    self.inputAccessoryView = [[UIView alloc] init];
+    inputView.inputAccessoryView = self.inputAccessoryView;
+    _inputView = inputView;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if (gestureRecognizer == self.panRecognizer) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (void)panGestureDidChange:(UIGestureRecognizer *)gesture
+{
+    CGPoint point = [gesture locationInView:self.keyboard];
+    
+//    BOOL inKeyboardSpace = point.y > self.originalKeyboardOrigin.y;
+    BOOL inKeyboardSpace = point.y > 0;
+
+    
+    if (inKeyboardSpace) {
+        self.keyboard.frame = CGRectOffset(self.keyboard.frame, 0, point.y);
+//        self.keyboard.frame = CGRectMake(0, point.y, CGRectGetWidth(self.keyboard.frame), CGRectGetHeight(self.keyboard.frame));
+    }
+    NSLog(@"Pan gesture: %f", point.y);
 }
 
 #pragma mark - Auto Layout

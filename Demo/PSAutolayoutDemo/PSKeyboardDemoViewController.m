@@ -8,6 +8,7 @@
 
 #import "PSKeyboardDemoViewController.h"
 #import "PSKeyboardDemoView.h"
+#import "YMKeyboardLayoutHelperView.h"
 
 @interface PSKeyboardDemoViewController ()
 @property (nonatomic, strong) NSArray *cellNames;
@@ -26,6 +27,12 @@
     self.demoView.tableView.delegate = self;
     self.demoView.tableView.dataSource = self;
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroundTapped:)];
+    [self.view addGestureRecognizer:tap];
+    
+    self.demoView.keyboardHelper.scrollView = self.demoView.tableView;
+    self.demoView.keyboardHelper.inputView = self.demoView.textField;
+    
     [self.demoView.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"StandardCell"];
     
     self.cellNames = @[@"First", @"Second", @"Third", @"Fourth", @"Fifth", @"Sixth", @"Seventh", @"Eighth", @"Ninth", @"Tenth", @"Eleventh"];
@@ -34,6 +41,18 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.cellNames count];
+}
+
+- (void)backgroundTapped:(id)sender
+{
+    NSLog(@"Background tapped.");
+    [self.demoView endEditing:YES];
+}
+
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

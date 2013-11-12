@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class YMKeyboardLayoutHelperView;
+
 @interface PSKeyboardDemoView : UIView
 
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UITableView *tableView;
-
+@property (nonatomic, strong) YMKeyboardLayoutHelperView *keyboardHelper;
 @end

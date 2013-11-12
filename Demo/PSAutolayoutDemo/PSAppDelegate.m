@@ -7,12 +7,16 @@
 //
 
 #import "PSAppDelegate.h"
+#import "PSKeyboardDemoViewController.h"
 
 @implementation PSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:[[PSKeyboardDemoViewController alloc] init]];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
