@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3768738C183446DF00DC0549 /* PSAutolayoutMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3768738B183446DF00DC0549 /* PSAutolayoutMessageCell.m */; };
+		3768738F18344C6800DC0549 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3768738D18344C6800DC0549 /* default_avatar.png */; };
+		3768739018344C6800DC0549 /* default_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3768738E18344C6800DC0549 /* default_avatar@2x.png */; };
 		37E54410182F3583005AF568 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E5440F182F3583005AF568 /* Foundation.framework */; };
 		37E54412182F3583005AF568 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E54411182F3583005AF568 /* CoreGraphics.framework */; };
 		37E54414182F3583005AF568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E54413182F3583005AF568 /* UIKit.framework */; };
@@ -25,6 +28,7 @@
 		37E5444C18315B1C005AF568 /* YMKeyboardLayoutHelperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5444A18315B1C005AF568 /* YMKeyboardLayoutHelperView.m */; };
 		37E5444F183161E8005AF568 /* PSKeyboardDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5444E183161E7005AF568 /* PSKeyboardDemoViewController.m */; };
 		37E5449618316E42005AF568 /* PSKeyboardDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5449518316E42005AF568 /* PSKeyboardDemoView.m */; };
+		59A8DAB211AA4E45BB4E132C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EC1F9272C647AAA0AB7C85 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24EC1F9272C647AAA0AB7C85 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3768738A183446DF00DC0549 /* PSAutolayoutMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAutolayoutMessageCell.h; sourceTree = "<group>"; };
+		3768738B183446DF00DC0549 /* PSAutolayoutMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAutolayoutMessageCell.m; sourceTree = "<group>"; };
+		3768738D18344C6800DC0549 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_avatar.png; path = Images/default_avatar.png; sourceTree = SOURCE_ROOT; };
+		3768738E18344C6800DC0549 /* default_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default_avatar@2x.png"; path = "Images/default_avatar@2x.png"; sourceTree = SOURCE_ROOT; };
 		37E5440C182F3583005AF568 /* PSAutolayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSAutolayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E5440F182F3583005AF568 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		37E54411182F3583005AF568 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +74,7 @@
 		37E5444E183161E7005AF568 /* PSKeyboardDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKeyboardDemoViewController.m; sourceTree = "<group>"; };
 		37E5449418316E42005AF568 /* PSKeyboardDemoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKeyboardDemoView.h; sourceTree = "<group>"; };
 		37E5449518316E42005AF568 /* PSKeyboardDemoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKeyboardDemoView.m; sourceTree = "<group>"; };
+		A11E0C4B63EC4CCCBD1AC3BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +85,7 @@
 				37E54412182F3583005AF568 /* CoreGraphics.framework in Frameworks */,
 				37E54414182F3583005AF568 /* UIKit.framework in Frameworks */,
 				37E54410182F3583005AF568 /* Foundation.framework in Frameworks */,
+				59A8DAB211AA4E45BB4E132C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +109,7 @@
 				37E54437182F3583005AF568 /* PSAutolayoutDemoTests */,
 				37E5440E182F3583005AF568 /* Frameworks */,
 				37E5440D182F3583005AF568 /* Products */,
+				A11E0C4B63EC4CCCBD1AC3BB /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +129,7 @@
 				37E54411182F3583005AF568 /* CoreGraphics.framework */,
 				37E54413182F3583005AF568 /* UIKit.framework */,
 				37E54431182F3583005AF568 /* XCTest.framework */,
+				24EC1F9272C647AAA0AB7C85 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,6 +155,8 @@
 		37E54416182F3583005AF568 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3768738D18344C6800DC0549 /* default_avatar.png */,
+				3768738E18344C6800DC0549 /* default_avatar@2x.png */,
 				37E54417182F3583005AF568 /* PSAutolayoutDemo-Info.plist */,
 				37E54418182F3583005AF568 /* InfoPlist.strings */,
 				37E5441B182F3583005AF568 /* main.m */,
@@ -173,6 +188,8 @@
 			children = (
 				37E5449418316E42005AF568 /* PSKeyboardDemoView.h */,
 				37E5449518316E42005AF568 /* PSKeyboardDemoView.m */,
+				3768738A183446DF00DC0549 /* PSAutolayoutMessageCell.h */,
+				3768738B183446DF00DC0549 /* PSAutolayoutMessageCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -195,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37E54441182F3583005AF568 /* Build configuration list for PBXNativeTarget "PSAutolayoutDemo" */;
 			buildPhases = (
+				3B5DD6808C7A40CF9DAC4CF9 /* Check Pods Manifest.lock */,
 				37E54408182F3583005AF568 /* Sources */,
 				37E54409182F3583005AF568 /* Frameworks */,
 				37E5440A182F3583005AF568 /* Resources */,
+				9C2B23AA2B974E768608B821 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,7 +284,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3768738F18344C6800DC0549 /* default_avatar.png in Resources */,
 				37E5442B182F3583005AF568 /* Images.xcassets in Resources */,
+				3768739018344C6800DC0549 /* default_avatar@2x.png in Resources */,
 				37E5441A182F3583005AF568 /* InfoPlist.strings in Resources */,
 				37E54423182F3583005AF568 /* Main.storyboard in Resources */,
 			);
@@ -281,6 +302,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B5DD6808C7A40CF9DAC4CF9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C2B23AA2B974E768608B821 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		37E54408182F3583005AF568 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -289,6 +343,7 @@
 				37E5441C182F3583005AF568 /* main.m in Sources */,
 				37E54420182F3583005AF568 /* PSAppDelegate.m in Sources */,
 				37E5449618316E42005AF568 /* PSKeyboardDemoView.m in Sources */,
+				3768738C183446DF00DC0549 /* PSAutolayoutMessageCell.m in Sources */,
 				37E5444F183161E8005AF568 /* PSKeyboardDemoViewController.m in Sources */,
 				37E54426182F3583005AF568 /* PSMasterViewController.m in Sources */,
 				37E5444B18315B1C005AF568 /* UIView+LayoutAdditions.m in Sources */,
@@ -416,6 +471,7 @@
 		};
 		37E54442182F3583005AF568 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A11E0C4B63EC4CCCBD1AC3BB /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -429,6 +485,7 @@
 		};
 		37E54443182F3583005AF568 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A11E0C4B63EC4CCCBD1AC3BB /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
