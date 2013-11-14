@@ -9,9 +9,6 @@
 #import "PSAutolayoutMessageCell.h"
 #import "UIView+LayoutAdditions.h"
 
-@interface PSAutolayoutMessageCell ()
-@property (nonatomic, assign) BOOL addedConstraints;
-@end
 @implementation PSAutolayoutMessageCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -54,17 +51,14 @@
         self.replyButton.titleLabel.font = [UIFont systemFontOfSize:12.0];
         [self.contentView addSubview:self.replyButton];
         
-        [self setNeedsUpdateConstraints];
-        [self updateConstraintsIfNeeded];
+        [self setupConstraints];
     }
 
     return self;
 }
 
-- (void)updateConstraints
+- (void)setupConstraints
 {
-    [super updateConstraints];
-    
     NSDictionary *views = @{
                             @"mugshot" : self.mugshotView,
                             @"date" : self.dateLabel,
@@ -74,26 +68,23 @@
                             @"reply" : self.replyButton,
                             };
     
-    if (!self.addedConstraints) {
-        NSLog(@"Adding constraint");
-        for (UIView *view in [views allValues]) {
-            view.translatesAutoresizingMaskIntoConstraints = NO;
-        }
-        NSLayoutFormatOptions topAndBottom = NSLayoutFormatAlignAllBottom | NSLayoutFormatAlignAllTop;
-        
-        // Horizontal
-        [self.contentView addVisualConstraints:@"H:|-13-[mugshot(40)]-[name]" views:views];
-        [self.contentView addVisualConstraints:@"H:[mugshot]-[message]-|" views:views];
-        [self.contentView addVisualConstraints:@"H:[name]-(>=8)-[date]-|" options:topAndBottom views:views];
-        [self.contentView addVisualConstraints:@"H:[reply]-[like]-|" options:topAndBottom views:views];
-        
-        // Vertical
-        [self.contentView addVisualConstraints:@"V:|-13-[mugshot(40)]" views:views];
-        [self.contentView addVisualConstraints:@"V:|-10-[date][message(>=10)][like]-6-|" views:views];
-        
-        self.addedConstraints = YES;
+    for (UIView *view in [views allValues]) {
+        view.translatesAutoresizingMaskIntoConstraints = NO;
     }
-
+    NSLayoutFormatOptions topAndBottom = NSLayoutFormatAlignAllBottom | NSLayoutFormatAlignAllTop;
+    
+    // Horizontal
+    [self.contentView addVisualConstraints:@"H:|-13-[mugshot(40)]-[name]" views:views];
+    [self.contentView addVisualConstraints:@"H:[mugshot]-[message]-|" views:views];
+    [self.contentView addVisualConstraints:@"H:[name]-(>=8)-[date]-|" options:topAndBottom views:views];
+    [self.contentView addVisualConstraints:@"H:[reply]-[like]-|" options:topAndBottom views:views];
+    
+    // Vertical
+    [self.contentView addVisualConstraints:@"V:|-13-[mugshot(40)]" views:views];
+    //        [self.contentView addVisualConstraints:@"V:|-10-[date][message(>=10)]-6-|" views:views];
+    [self.contentView addVisualConstraints:@"V:|-10-[date][message(>=10)][like]-6-|" views:views];
+    
+    
 }
 
 @end

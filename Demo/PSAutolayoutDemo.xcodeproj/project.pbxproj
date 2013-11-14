@@ -16,7 +16,6 @@
 		37E5441A182F3583005AF568 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37E54418182F3583005AF568 /* InfoPlist.strings */; };
 		37E5441C182F3583005AF568 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5441B182F3583005AF568 /* main.m */; };
 		37E54420182F3583005AF568 /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5441F182F3583005AF568 /* PSAppDelegate.m */; };
-		37E54423182F3583005AF568 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E54421182F3583005AF568 /* Main.storyboard */; };
 		37E54426182F3583005AF568 /* PSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E54425182F3583005AF568 /* PSMasterViewController.m */; };
 		37E5442B182F3583005AF568 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E5442A182F3583005AF568 /* Images.xcassets */; };
 		37E54432182F3583005AF568 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E54431182F3583005AF568 /* XCTest.framework */; };
@@ -57,7 +56,6 @@
 		37E5441D182F3583005AF568 /* PSAutolayoutDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PSAutolayoutDemo-Prefix.pch"; sourceTree = "<group>"; };
 		37E5441E182F3583005AF568 /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
 		37E5441F182F3583005AF568 /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
-		37E54422182F3583005AF568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37E54424182F3583005AF568 /* PSMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSMasterViewController.h; sourceTree = "<group>"; };
 		37E54425182F3583005AF568 /* PSMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSMasterViewController.m; sourceTree = "<group>"; };
 		37E5442A182F3583005AF568 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				37E5444A18315B1C005AF568 /* YMKeyboardLayoutHelperView.m */,
 				37E5441E182F3583005AF568 /* PSAppDelegate.h */,
 				37E5441F182F3583005AF568 /* PSAppDelegate.m */,
-				37E54421182F3583005AF568 /* Main.storyboard */,
 				37E5442A182F3583005AF568 /* Images.xcassets */,
 				37E54416182F3583005AF568 /* Supporting Files */,
 			);
@@ -288,7 +285,6 @@
 				37E5442B182F3583005AF568 /* Images.xcassets in Resources */,
 				3768739018344C6800DC0549 /* default_avatar@2x.png in Resources */,
 				37E5441A182F3583005AF568 /* InfoPlist.strings in Resources */,
-				37E54423182F3583005AF568 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,14 +372,6 @@
 				37E54419182F3583005AF568 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		37E54421182F3583005AF568 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37E54422182F3583005AF568 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		37E5443A182F3583005AF568 /* InfoPlist.strings */ = {
