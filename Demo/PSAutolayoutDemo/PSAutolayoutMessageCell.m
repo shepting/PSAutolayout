@@ -35,7 +35,7 @@
         self.messageLabel = [[UILabel alloc] init];
         self.messageLabel.text = @"First off, we should really be ensuring that we make good decisions going forward.";
         self.messageLabel.font = [UIFont systemFontOfSize:12.0];
-        self.messageLabel.preferredMaxLayoutWidth = 200;
+        self.messageLabel.preferredMaxLayoutWidth = 239;
         self.messageLabel.numberOfLines = 0;
         [self.contentView addSubview:self.messageLabel];
         

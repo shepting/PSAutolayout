@@ -137,7 +137,7 @@
 			children = (
 				37E5441E182F3583005AF568 /* PSAppDelegate.h */,
 				37E5441F182F3583005AF568 /* PSAppDelegate.m */,
-				37E5449818316E4F005AF568 /* Controllers */,
+				37E5449818316E4F005AF568 /* KeyboardDemo */,
 				37E5449718316E48005AF568 /* Views */,
 				37E5444718315B1C005AF568 /* UIView+LayoutAdditions.h */,
 				37E5444818315B1C005AF568 /* UIView+LayoutAdditions.m */,
@@ -183,23 +183,23 @@
 		37E5449718316E48005AF568 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				37E5449418316E42005AF568 /* PSKeyboardDemoView.h */,
-				37E5449518316E42005AF568 /* PSKeyboardDemoView.m */,
 				3768738A183446DF00DC0549 /* PSAutolayoutMessageCell.h */,
 				3768738B183446DF00DC0549 /* PSAutolayoutMessageCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		37E5449818316E4F005AF568 /* Controllers */ = {
+		37E5449818316E4F005AF568 /* KeyboardDemo */ = {
 			isa = PBXGroup;
 			children = (
 				37E5444D183161E7005AF568 /* PSKeyboardDemoViewController.h */,
 				37E5444E183161E7005AF568 /* PSKeyboardDemoViewController.m */,
+				37E5449418316E42005AF568 /* PSKeyboardDemoView.h */,
+				37E5449518316E42005AF568 /* PSKeyboardDemoView.m */,
 				37E54424182F3583005AF568 /* PSMasterViewController.h */,
 				37E54425182F3583005AF568 /* PSMasterViewController.m */,
 			);
-			name = Controllers;
+			name = KeyboardDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

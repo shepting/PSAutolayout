@@ -81,6 +81,8 @@ static NSString *reuseIdentifier = @"StandardCell";
 {
     PSAutolayoutMessageCell *cell = [self.demoView.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     cell.messageLabel.text = self.messages[indexPath.row];
+    [cell.contentView setNeedsLayout];
+    [cell.contentView layoutIfNeeded];
     
     return cell;
 }
