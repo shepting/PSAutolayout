@@ -135,14 +135,14 @@
 		37E54415182F3583005AF568 /* PSAutolayoutDemo */ = {
 			isa = PBXGroup;
 			children = (
+				37E5441E182F3583005AF568 /* PSAppDelegate.h */,
+				37E5441F182F3583005AF568 /* PSAppDelegate.m */,
 				37E5449818316E4F005AF568 /* Controllers */,
 				37E5449718316E48005AF568 /* Views */,
 				37E5444718315B1C005AF568 /* UIView+LayoutAdditions.h */,
 				37E5444818315B1C005AF568 /* UIView+LayoutAdditions.m */,
 				37E5444918315B1C005AF568 /* YMKeyboardLayoutHelperView.h */,
 				37E5444A18315B1C005AF568 /* YMKeyboardLayoutHelperView.m */,
-				37E5441E182F3583005AF568 /* PSAppDelegate.h */,
-				37E5441F182F3583005AF568 /* PSAppDelegate.m */,
 				37E5442A182F3583005AF568 /* Images.xcassets */,
 				37E54416182F3583005AF568 /* Supporting Files */,
 			);

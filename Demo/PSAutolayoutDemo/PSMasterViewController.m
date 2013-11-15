@@ -21,6 +21,11 @@
                          @"StaticCompose",
                          @"ThreeUp",
                          @"MessagingCell"];
+    
+//    self.tableView = [[UITableView alloc] init];
+//    self.tableView.delegate = self;
+//    self.view = self.tableView;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
 
 #pragma mark - Table View

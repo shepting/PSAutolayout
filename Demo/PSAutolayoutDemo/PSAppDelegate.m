@@ -8,6 +8,7 @@
 
 #import "PSAppDelegate.h"
 #import "PSKeyboardDemoViewController.h"
+#import "PSMasterViewController.h"
 #import "DCIntrospect.h"
 
 @implementation PSAppDelegate
@@ -16,16 +17,18 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    PSKeyboardDemoViewController *keyboardDemo = [[PSKeyboardDemoViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:keyboardDemo];
+//    PSKeyboardDemoViewController *keyboardDemo = [[PSKeyboardDemoViewController alloc] init];
+    PSMasterViewController *master = [[PSMasterViewController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:master];
     [self.window setRootViewController:nav];
-    
-    [self.window makeKeyAndVisible];
-    
 #if TARGET_IPHONE_SIMULATOR
     // Visual debugging tool for simulator
     [[DCIntrospect sharedIntrospector] start];
 #endif
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
