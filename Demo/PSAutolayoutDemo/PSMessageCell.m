@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Hepting. All rights reserved.
 //
 
-#import "PSAutolayoutMessageCell.h"
+#import "PSMessageCell.h"
 #import "UIView+LayoutAdditions.h"
 
-@implementation PSAutolayoutMessageCell
+@implementation PSMessageCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -24,9 +24,11 @@
         self.nameLabel = [[UILabel alloc] init];
         self.nameLabel.text = @"David Hanson";
         self.nameLabel.font = [UIFont systemFontOfSize:14.0];
+        self.nameLabel.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.nameLabel];
         
         self.dateLabel = [[UILabel alloc] init];
+        self.dateLabel.backgroundColor = [UIColor whiteColor];
         self.dateLabel.text = @"Jun 13, 2013";
         self.dateLabel.font = [UIFont systemFontOfSize:12.0];
         self.dateLabel.textColor = [UIColor lightGrayColor];
@@ -35,20 +37,23 @@
         self.messageLabel = [[UILabel alloc] init];
         self.messageLabel.text = @"First off, we should really be ensuring that we make good decisions going forward.";
         self.messageLabel.font = [UIFont systemFontOfSize:12.0];
-        self.messageLabel.preferredMaxLayoutWidth = 239;
+        self.messageLabel.preferredMaxLayoutWidth = 232; // This is required to ensure that the label doesn't continue forever off the screen, but it would be great if it could just be calculated somehow.
         self.messageLabel.numberOfLines = 0;
+        self.messageLabel.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.messageLabel];
         
         self.likeButton = [[UIButton alloc] init];
         [self.likeButton setTitle:@"Like" forState:UIControlStateNormal];
         [self.likeButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         self.likeButton.titleLabel.font = [UIFont systemFontOfSize:12.0];
+        self.likeButton.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.likeButton];
         
         self.replyButton = [[UIButton alloc] init];
         [self.replyButton setTitle:@"Reply" forState:UIControlStateNormal];
         [self.replyButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         self.replyButton.titleLabel.font = [UIFont systemFontOfSize:12.0];
+        self.replyButton.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:self.replyButton];
         
         [self setupConstraints];
@@ -74,7 +79,7 @@
     NSLayoutFormatOptions topAndBottom = NSLayoutFormatAlignAllBottom | NSLayoutFormatAlignAllTop;
     
     // Horizontal
-    [self.contentView addVisualConstraints:@"H:|-13-[mugshot(40)]-[name]" views:views];
+    [self.contentView addVisualConstraints:@"H:|-[mugshot(40)]-[name]" views:views];
     [self.contentView addVisualConstraints:@"H:[mugshot]-[message]-|" views:views];
     [self.contentView addVisualConstraints:@"H:[name]-(>=8)-[date]-|" options:topAndBottom views:views];
     [self.contentView addVisualConstraints:@"H:[reply]-[like]-|" options:topAndBottom views:views];
@@ -83,8 +88,6 @@
     [self.contentView addVisualConstraints:@"V:|-13-[mugshot(40)]" views:views];
     //        [self.contentView addVisualConstraints:@"V:|-10-[date][message(>=10)]-6-|" views:views];
     [self.contentView addVisualConstraints:@"V:|-10-[date][message(>=10)][like]-6-|" views:views];
-    
-    
 }
 
 @end

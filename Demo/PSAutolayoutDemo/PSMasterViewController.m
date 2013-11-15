@@ -8,6 +8,8 @@
 
 #import "PSMasterViewController.h"
 #import "PSKeyboardDemoViewController.h"
+#import "PSThreeUpViewController.h"
+#import "PSMessagesViewController.h"
 
 @implementation PSMasterViewController
 
@@ -17,14 +19,11 @@
     
     self.title = @"Demos";
     
-    self.demoScreens = @[@"KeyboardHelper",
+    self.demoScreens = @[@"ThreeUp",
                          @"StaticCompose",
-                         @"ThreeUp",
+                         @"KeyboardHelper",
                          @"MessagingCell"];
     
-//    self.tableView = [[UITableView alloc] init];
-//    self.tableView.delegate = self;
-//    self.view = self.tableView;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
 
@@ -51,6 +50,12 @@
     
     if ([demoName isEqualToString:@"KeyboardHelper"]) {
         UIViewController *vc = [[PSKeyboardDemoViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([demoName isEqualToString:@"ThreeUp"]) {
+        UIViewController *vc = [[PSThreeUpViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([demoName isEqualToString:@"MessagingCell"]) {
+        UIViewController *vc = [[PSMessagesViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     NSLog(@"%@", demoName);

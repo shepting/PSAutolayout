@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSKeyboardDemoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PSKeyboardDemoViewController : UITableViewController
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSAutolayoutMessageCell : UITableViewCell
+@interface PSMessageCell : UITableViewCell
 
 @property (nonatomic) UIImageView *mugshotView;
 @property (nonatomic) UILabel *dateLabel;
