@@ -1,0 +1,17 @@
+PODS:
+  - DCIntrospect-ARC (0.0.6)
+  - PSAutolayout (1.0)
+
+DEPENDENCIES:
+  - DCIntrospect-ARC
+  - PSAutolayout (from `..`)
+
+EXTERNAL SOURCES:
+  PSAutolayout:
+    :path: ..
+
+SPEC CHECKSUMS:
+  DCIntrospect-ARC: 41cae8dbe48748e77a4466963896df13889df041
+  PSAutolayout: e131eb40140b55a0f8d063bc4b921b69db389b01
+
+COCOAPODS: 0.27.1
