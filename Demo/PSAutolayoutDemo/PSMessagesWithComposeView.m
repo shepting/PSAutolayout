@@ -1,16 +1,16 @@
 //
-//  PSKeyboardDemoView.m
+//  PSMessagesWithComposeView.m
 //  PSAutolayoutDemo
 //
-//  Created by Steven Hepting on 11/11/13.
+//  Created by Steven Hepting on 11/14/13.
 //  Copyright (c) 2013 Hepting. All rights reserved.
 //
 
-#import "PSKeyboardDemoView.h"
+#import "PSMessagesWithComposeView.h"
 #import "UIView+LayoutAdditions.h"
 #import "YMKeyboardLayoutHelperView.h"
 
-@implementation PSKeyboardDemoView
+@implementation PSMessagesWithComposeView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -20,9 +20,9 @@
         self.tableView.rowHeight = 70;
         [self addSubview:self.tableView];
         
-        self.textField = [[UITextField alloc] init];
-        self.textField.borderStyle = UITextBorderStyleRoundedRect;
-        [self addSubview:self.textField];
+        self.composeButton = [[UIView alloc] init];
+        self.composeButton.backgroundColor = [UIColor redColor];
+        [self addSubview:self.composeButton];
         
         self.keyboardHelper = [[YMKeyboardLayoutHelperView alloc] init];
         [self addSubview:self.keyboardHelper];
@@ -38,7 +38,7 @@
     [super updateConstraints];
     
     NSDictionary *views = @{
-                            @"text": self.textField,
+                            @"compose": self.composeButton,
                             @"table": self.tableView,
                             @"helper": self.keyboardHelper
                             };
@@ -48,11 +48,12 @@
     }
     
     // Vertical
-    [self addVisualConstraints:@"V:|[table][text(40)][helper]|" views:views];
-
+    [self addVisualConstraints:@"V:|[table][helper]|" views:views];
+    [self addVisualConstraints:@"V:[compose(30)]-|" views:views];
+    
     // Horizontal
     [self addVisualConstraints:@"H:|[table]|" views:views];
-    [self addVisualConstraints:@"H:|[text]|" views:views];
+    [self addVisualConstraints:@"H:[compose(30)]-|" views:views];
 }
 
 @end

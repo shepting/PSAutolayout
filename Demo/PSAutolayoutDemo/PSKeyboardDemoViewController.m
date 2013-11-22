@@ -10,16 +10,27 @@
 #import "PSKeyboardDemoView.h"
 #import "YMKeyboardLayoutHelperView.h"
 #import "PSMessageCell.h"
+#import "PSMessagesWithComposeView.h"
 
 @interface PSKeyboardDemoViewController ()
 @property (nonatomic, strong) NSMutableArray *messages;
-@property (nonatomic, strong) PSKeyboardDemoView *demoView;
+@property (nonatomic, strong) id <KeyboardDemoView> demoView;
 @property (nonatomic, strong) PSMessageCell *calculationCell;
+@property (nonatomic, assign) BOOL showComposeButton;
 @end
 
 static NSString *reuseIdentifier = @"StandardCell";
 
 @implementation PSKeyboardDemoViewController
+
+- (instancetype)initWithComposeButton
+{
+    self = [super init];
+    if (self) {
+        _showComposeButton = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -27,8 +38,12 @@ static NSString *reuseIdentifier = @"StandardCell";
     
     self.title = @"Autolayout Cells";
     
-    self.demoView = [[PSKeyboardDemoView alloc] init];
-    self.view = self.demoView;
+    if (self.showComposeButton) {
+        self.view = [[PSMessagesWithComposeView alloc] init];
+    } else {
+        self.demoView = [[PSKeyboardDemoView alloc] init];
+        self.view = (UIView *)self.demoView;
+    }
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroundTapped:)];
     [self.view addGestureRecognizer:tap];
@@ -49,7 +64,7 @@ static NSString *reuseIdentifier = @"StandardCell";
 
 - (void)backgroundTapped:(id)sender
 {
-    [self.demoView endEditing:YES];
+    [self.view endEditing:YES];
 }
 
 
@@ -61,7 +76,7 @@ static NSString *reuseIdentifier = @"StandardCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.demoView.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    cell.textLabel.text = [NSString stringWithFormat:@"Cell Number: %i", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"Cell Number: %li", (long)indexPath.row];
     
     return cell;
 }

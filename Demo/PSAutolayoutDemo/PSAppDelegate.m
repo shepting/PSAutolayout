@@ -20,10 +20,6 @@
     PSMasterViewController *master = [[PSMasterViewController alloc] init];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:master];
-#if TARGET_IPHONE_SIMULATOR
-    // Visual debugging tool for simulator
-    [[DCIntrospect sharedIntrospector] start];
-#endif
     [self.window setRootViewController:nav];
     
     [self.window makeKeyAndVisible];

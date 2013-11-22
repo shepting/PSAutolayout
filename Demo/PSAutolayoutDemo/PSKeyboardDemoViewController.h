@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface PSKeyboardDemoViewController : UITableViewController
+
+- (instancetype)initWithComposeButton;
 
 @end

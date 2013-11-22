@@ -23,14 +23,13 @@
 		37E54434182F3583005AF568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E54413182F3583005AF568 /* UIKit.framework */; };
 		37E5443C182F3583005AF568 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37E5443A182F3583005AF568 /* InfoPlist.strings */; };
 		37E5443E182F3583005AF568 /* PSAutolayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5443D182F3583005AF568 /* PSAutolayoutDemoTests.m */; };
-		37E5444B18315B1C005AF568 /* UIView+LayoutAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5444818315B1C005AF568 /* UIView+LayoutAdditions.m */; };
-		37E5444C18315B1C005AF568 /* YMKeyboardLayoutHelperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5444A18315B1C005AF568 /* YMKeyboardLayoutHelperView.m */; };
 		37E5444F183161E8005AF568 /* PSKeyboardDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5444E183161E7005AF568 /* PSKeyboardDemoViewController.m */; };
 		37E5449618316E42005AF568 /* PSKeyboardDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5449518316E42005AF568 /* PSKeyboardDemoView.m */; };
 		37FECE1B1835A9450050E5FA /* PSThreeUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FECE1A1835A9450050E5FA /* PSThreeUpView.m */; };
 		37FECE1E1835A95D0050E5FA /* PSThreeUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FECE1D1835A95D0050E5FA /* PSThreeUpViewController.m */; };
 		37FECE221835AF520050E5FA /* PSMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FECE211835AF520050E5FA /* PSMessagesViewController.m */; };
 		37FECE251835AF900050E5FA /* PSMessagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FECE241835AF900050E5FA /* PSMessagesView.m */; };
+		37FECE291835C46A0050E5FA /* PSMessagesWithComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FECE281835C46A0050E5FA /* PSMessagesWithComposeView.m */; };
 		59A8DAB211AA4E45BB4E132C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EC1F9272C647AAA0AB7C85 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,10 +67,6 @@
 		37E54439182F3583005AF568 /* PSAutolayoutDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PSAutolayoutDemoTests-Info.plist"; sourceTree = "<group>"; };
 		37E5443B182F3583005AF568 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37E5443D182F3583005AF568 /* PSAutolayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAutolayoutDemoTests.m; sourceTree = "<group>"; };
-		37E5444718315B1C005AF568 /* UIView+LayoutAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutAdditions.h"; sourceTree = "<group>"; };
-		37E5444818315B1C005AF568 /* UIView+LayoutAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutAdditions.m"; sourceTree = "<group>"; };
-		37E5444918315B1C005AF568 /* YMKeyboardLayoutHelperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMKeyboardLayoutHelperView.h; sourceTree = "<group>"; };
-		37E5444A18315B1C005AF568 /* YMKeyboardLayoutHelperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMKeyboardLayoutHelperView.m; sourceTree = "<group>"; };
 		37E5444D183161E7005AF568 /* PSKeyboardDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKeyboardDemoViewController.h; sourceTree = "<group>"; };
 		37E5444E183161E7005AF568 /* PSKeyboardDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSKeyboardDemoViewController.m; sourceTree = "<group>"; };
 		37E5449418316E42005AF568 /* PSKeyboardDemoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSKeyboardDemoView.h; sourceTree = "<group>"; };
@@ -84,6 +79,8 @@
 		37FECE211835AF520050E5FA /* PSMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMessagesViewController.m; sourceTree = "<group>"; };
 		37FECE231835AF900050E5FA /* PSMessagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMessagesView.h; sourceTree = "<group>"; };
 		37FECE241835AF900050E5FA /* PSMessagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMessagesView.m; sourceTree = "<group>"; };
+		37FECE271835C46A0050E5FA /* PSMessagesWithComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMessagesWithComposeView.h; sourceTree = "<group>"; };
+		37FECE281835C46A0050E5FA /* PSMessagesWithComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMessagesWithComposeView.m; sourceTree = "<group>"; };
 		A11E0C4B63EC4CCCBD1AC3BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,12 +149,9 @@
 				37E54424182F3583005AF568 /* PSMasterViewController.h */,
 				37E54425182F3583005AF568 /* PSMasterViewController.m */,
 				37FECE181835A91F0050E5FA /* ThreeUpDemo */,
+				37FECE261835C41E0050E5FA /* Static Compose Demo */,
 				37E5449818316E4F005AF568 /* KeyboardHelperDemo */,
 				37FECE1F1835AEF30050E5FA /* MessagingCell */,
-				37E5444718315B1C005AF568 /* UIView+LayoutAdditions.h */,
-				37E5444818315B1C005AF568 /* UIView+LayoutAdditions.m */,
-				37E5444918315B1C005AF568 /* YMKeyboardLayoutHelperView.h */,
-				37E5444A18315B1C005AF568 /* YMKeyboardLayoutHelperView.m */,
 				37E5442A182F3583005AF568 /* Images.xcassets */,
 				37E54416182F3583005AF568 /* Supporting Files */,
 			);
@@ -228,6 +222,15 @@
 				37FECE211835AF520050E5FA /* PSMessagesViewController.m */,
 			);
 			name = MessagingCell;
+			sourceTree = "<group>";
+		};
+		37FECE261835C41E0050E5FA /* Static Compose Demo */ = {
+			isa = PBXGroup;
+			children = (
+				37FECE271835C46A0050E5FA /* PSMessagesWithComposeView.h */,
+				37FECE281835C46A0050E5FA /* PSMessagesWithComposeView.m */,
+			);
+			name = "Static Compose Demo";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,11 +374,10 @@
 				3768738C183446DF00DC0549 /* PSMessageCell.m in Sources */,
 				37E5444F183161E8005AF568 /* PSKeyboardDemoViewController.m in Sources */,
 				37E54426182F3583005AF568 /* PSMasterViewController.m in Sources */,
+				37FECE291835C46A0050E5FA /* PSMessagesWithComposeView.m in Sources */,
 				37FECE221835AF520050E5FA /* PSMessagesViewController.m in Sources */,
 				37FECE1E1835A95D0050E5FA /* PSThreeUpViewController.m in Sources */,
 				37FECE251835AF900050E5FA /* PSMessagesView.m in Sources */,
-				37E5444B18315B1C005AF568 /* UIView+LayoutAdditions.m in Sources */,
-				37E5444C18315B1C005AF568 /* YMKeyboardLayoutHelperView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

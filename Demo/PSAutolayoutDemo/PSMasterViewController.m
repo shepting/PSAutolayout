@@ -54,6 +54,9 @@
     } else if ([demoName isEqualToString:@"ThreeUp"]) {
         UIViewController *vc = [[PSThreeUpViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    } else if ([demoName isEqualToString:@"StaticCompose"]) {
+        UIViewController *vc = [[PSKeyboardDemoViewController alloc] initWithComposeButton];
+        [self.navigationController pushViewController:vc animated:YES];
     } else if ([demoName isEqualToString:@"MessagingCell"]) {
         UIViewController *vc = [[PSMessagesViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];

@@ -10,7 +10,17 @@
 
 @class YMKeyboardLayoutHelperView;
 
-@interface PSKeyboardDemoView : UIView
+@protocol KeyboardDemoView <NSObject>
+@required
+- (UITableView *)tableView;
+@optional
+- (YMKeyboardLayoutHelperView *)keyboardHelper;
+- (UITextField *)textField;
+@end
+
+@class YMKeyboardLayoutHelperView;
+
+@interface PSKeyboardDemoView : UIView <KeyboardDemoView>
 
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UITableView *tableView;
