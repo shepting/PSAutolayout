@@ -39,11 +39,11 @@ static NSString *reuseIdentifier = @"StandardCell";
     self.title = @"Autolayout Cells";
     
     if (self.showComposeButton) {
-        self.view = [[PSMessagesWithComposeView alloc] init];
+        self.demoView = [[PSMessagesWithComposeView alloc] init];
     } else {
         self.demoView = [[PSKeyboardDemoView alloc] init];
-        self.view = (UIView *)self.demoView;
     }
+    self.view = (UIView *)self.demoView;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroundTapped:)];
     [self.view addGestureRecognizer:tap];
@@ -51,8 +51,10 @@ static NSString *reuseIdentifier = @"StandardCell";
     self.demoView.tableView.dataSource = self;
     self.demoView.tableView.delegate = self;
     
-    self.demoView.keyboardHelper.scrollView = self.tableView;
-    self.demoView.keyboardHelper.inputView = self.demoView.textField;
+    if (!self.showComposeButton) {
+        self.demoView.keyboardHelper.scrollView = self.tableView;
+        self.demoView.keyboardHelper.inputView = self.demoView.textField;
+    }
     
     [self.demoView.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
 }

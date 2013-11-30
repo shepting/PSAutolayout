@@ -10,6 +10,11 @@
 #import "UIView+LayoutAdditions.h"
 #import "YMKeyboardLayoutHelperView.h"
 
+@interface PSKeyboardDemoView ()
+@property (nonatomic, strong) UIView *composeView;
+@property (nonatomic, strong) UIButton *sendButton;
+@end
+
 @implementation PSKeyboardDemoView
 
 - (id)initWithFrame:(CGRect)frame
@@ -20,9 +25,17 @@
         self.tableView.rowHeight = 70;
         [self addSubview:self.tableView];
         
+        self.composeView = [[UIView alloc] init];
+        self.composeView.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:self.composeView];
+        
+        self.sendButton = [[UIButton alloc] init];
+        [self.sendButton setTitle:@"Send" forState:UIControlStateNormal];
+        [self.composeView addSubview:self.sendButton];
+        
         self.textField = [[UITextField alloc] init];
         self.textField.borderStyle = UITextBorderStyleRoundedRect;
-        [self addSubview:self.textField];
+        [self.composeView addSubview:self.textField];
         
         self.keyboardHelper = [[YMKeyboardLayoutHelperView alloc] init];
         [self addSubview:self.keyboardHelper];
@@ -38,8 +51,10 @@
     [super updateConstraints];
     
     NSDictionary *views = @{
-                            @"text": self.textField,
                             @"table": self.tableView,
+                            @"composeView" : self.composeView,
+                            @"textInput": self.textField,
+                            @"sendButton" : self.sendButton,
                             @"helper": self.keyboardHelper
                             };
     
@@ -48,11 +63,17 @@
     }
     
     // Vertical
-    [self addVisualConstraints:@"V:|[table][text(40)][helper]|" views:views];
+    [self addVisualConstraints:@"V:|[table][composeView(40)][helper]|" views:views];
 
     // Horizontal
     [self addVisualConstraints:@"H:|[table]|" views:views];
-    [self addVisualConstraints:@"H:|[text]|" views:views];
+    [self addVisualConstraints:@"H:|[composeView]|" views:views];
+    
+    [self.sendButton setContentHuggingPriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
+    
+    // Compose View
+    [self addVisualConstraints:@"V:|-3-[textInput]-3-|" views:views];
+    [self addVisualConstraints:@"H:|-3-[textInput]-6-[sendButton]-6-|" options:NSLayoutFormatAlignAllCenterY views:views];
 }
 
 @end
