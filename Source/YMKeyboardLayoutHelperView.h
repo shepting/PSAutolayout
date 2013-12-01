@@ -10,7 +10,5 @@
 
 @interface YMKeyboardLayoutHelperView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UITextField *inputView;
 
 @end

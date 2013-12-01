@@ -51,11 +51,6 @@ static NSString *reuseIdentifier = @"StandardCell";
     self.demoView.tableView.dataSource = self;
     self.demoView.tableView.delegate = self;
     
-    if (!self.showComposeButton) {
-        self.demoView.keyboardHelper.scrollView = self.tableView;
-        self.demoView.keyboardHelper.inputView = self.demoView.textField;
-    }
-    
     [self.demoView.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
 }
 
