@@ -10,6 +10,8 @@
 		3768738C183446DF00DC0549 /* PSMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3768738B183446DF00DC0549 /* PSMessageCell.m */; };
 		3768738F18344C6800DC0549 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3768738D18344C6800DC0549 /* default_avatar.png */; };
 		3768739018344C6800DC0549 /* default_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3768738E18344C6800DC0549 /* default_avatar@2x.png */; };
+		379E24C71851594500795189 /* PSAnimatePositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379E24C61851594500795189 /* PSAnimatePositionViewController.m */; };
+		379E24CA1851595A00795189 /* PSAnimatePositionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 379E24C91851595A00795189 /* PSAnimatePositionView.m */; };
 		37E54410182F3583005AF568 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E5440F182F3583005AF568 /* Foundation.framework */; };
 		37E54412182F3583005AF568 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E54411182F3583005AF568 /* CoreGraphics.framework */; };
 		37E54414182F3583005AF568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E54413182F3583005AF568 /* UIKit.framework */; };
@@ -49,6 +51,10 @@
 		3768738B183446DF00DC0549 /* PSMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMessageCell.m; sourceTree = "<group>"; };
 		3768738D18344C6800DC0549 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_avatar.png; path = Images/default_avatar.png; sourceTree = SOURCE_ROOT; };
 		3768738E18344C6800DC0549 /* default_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default_avatar@2x.png"; path = "Images/default_avatar@2x.png"; sourceTree = SOURCE_ROOT; };
+		379E24C51851594500795189 /* PSAnimatePositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAnimatePositionViewController.h; sourceTree = "<group>"; };
+		379E24C61851594500795189 /* PSAnimatePositionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAnimatePositionViewController.m; sourceTree = "<group>"; };
+		379E24C81851595A00795189 /* PSAnimatePositionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAnimatePositionView.h; sourceTree = "<group>"; };
+		379E24C91851595A00795189 /* PSAnimatePositionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAnimatePositionView.m; sourceTree = "<group>"; };
 		37E5440C182F3583005AF568 /* PSAutolayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSAutolayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E5440F182F3583005AF568 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		37E54411182F3583005AF568 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,6 +115,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		379E24C41851592300795189 /* Animating Position */ = {
+			isa = PBXGroup;
+			children = (
+				379E24C51851594500795189 /* PSAnimatePositionViewController.h */,
+				379E24C61851594500795189 /* PSAnimatePositionViewController.m */,
+				379E24C81851595A00795189 /* PSAnimatePositionView.h */,
+				379E24C91851595A00795189 /* PSAnimatePositionView.m */,
+			);
+			name = "Animating Position";
+			sourceTree = "<group>";
+		};
 		37E54403182F3583005AF568 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +168,7 @@
 				37FECE181835A91F0050E5FA /* ThreeUpDemo */,
 				37FECE261835C41E0050E5FA /* Static Compose Demo */,
 				37E5449818316E4F005AF568 /* KeyboardHelperDemo */,
+				379E24C41851592300795189 /* Animating Position */,
 				37FECE1F1835AEF30050E5FA /* MessagingCell */,
 				37E5442A182F3583005AF568 /* Images.xcassets */,
 				37E54416182F3583005AF568 /* Supporting Files */,
@@ -370,6 +388,7 @@
 				37E5441C182F3583005AF568 /* main.m in Sources */,
 				37E54420182F3583005AF568 /* PSAppDelegate.m in Sources */,
 				37FECE1B1835A9450050E5FA /* PSThreeUpView.m in Sources */,
+				379E24CA1851595A00795189 /* PSAnimatePositionView.m in Sources */,
 				37E5449618316E42005AF568 /* PSKeyboardDemoView.m in Sources */,
 				3768738C183446DF00DC0549 /* PSMessageCell.m in Sources */,
 				37E5444F183161E8005AF568 /* PSKeyboardDemoViewController.m in Sources */,
@@ -377,6 +396,7 @@
 				37FECE291835C46A0050E5FA /* PSMessagesWithComposeView.m in Sources */,
 				37FECE221835AF520050E5FA /* PSMessagesViewController.m in Sources */,
 				37FECE1E1835A95D0050E5FA /* PSThreeUpViewController.m in Sources */,
+				379E24C71851594500795189 /* PSAnimatePositionViewController.m in Sources */,
 				37FECE251835AF900050E5FA /* PSMessagesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

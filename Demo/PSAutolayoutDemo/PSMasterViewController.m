@@ -10,6 +10,7 @@
 #import "PSKeyboardDemoViewController.h"
 #import "PSThreeUpViewController.h"
 #import "PSMessagesViewController.h"
+#import "PSAnimatePositionViewController.h"
 
 @implementation PSMasterViewController
 
@@ -22,7 +23,8 @@
     self.demoScreens = @[@"ThreeUp",
                          @"StaticCompose",
                          @"KeyboardHelper",
-                         @"MessagingCell"];
+                         @"MessagingCell",
+                         @"Animating Position"];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
@@ -59,6 +61,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if ([demoName isEqualToString:@"MessagingCell"]) {
         UIViewController *vc = [[PSMessagesViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([demoName isEqualToString:@"Animating Position"]) {
+        UIViewController *vc = [[PSAnimatePositionViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     NSLog(@"%@", demoName);
