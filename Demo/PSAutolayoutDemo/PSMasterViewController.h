@@ -10,5 +10,5 @@
 
 @interface PSMasterViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *demoScreens;
+@property (nonatomic, strong) NSDictionary *demoScreens;
 @end

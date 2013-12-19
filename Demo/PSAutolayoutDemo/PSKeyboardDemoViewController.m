@@ -36,8 +36,6 @@ static NSString *reuseIdentifier = @"StandardCell";
 {
     [super viewDidLoad];
     
-    self.title = @"Autolayout Cells";
-    
     if (self.showComposeButton) {
         self.demoView = [[PSMessagesWithComposeView alloc] init];
     } else {

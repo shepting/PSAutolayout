@@ -19,7 +19,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Three Up";
+        self.title = @"Three Horizontal";
     }
     return self;
 }

@@ -23,9 +23,7 @@ static NSString *reuseIdentifier = @"StandardCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.title = @"Messaging Cells";
-    
+        
     self.messagesView = [[PSMessagesView alloc] init];
     self.view = self.messagesView;
     

@@ -12,6 +12,12 @@
 #import "PSMessagesViewController.h"
 #import "PSAnimatePositionViewController.h"
 
+NSString *PSDemoStaticCompose = @"Hovering Compose";
+NSString *PSDemoThreeHorizontal = @"Three Horizontal";
+NSString *PSDemoKeyboardHelper = @"Keyboard Helper";
+NSString *PSDemoAutolayoutCell = @"Autolayout Cell";
+NSString *PSDemoDraggableViews = @"Draggable Views";
+
 @implementation PSMasterViewController
 
 - (void)viewDidLoad
@@ -20,11 +26,12 @@
     
     self.title = @"Demos";
     
-    self.demoScreens = @[@"ThreeUp",
-                         @"StaticCompose",
-                         @"KeyboardHelper",
-                         @"MessagingCell",
-                         @"Animating Position"];
+    self.demoScreens = @{PSDemoStaticCompose : [[PSKeyboardDemoViewController alloc] initWithComposeButton],
+                         PSDemoThreeHorizontal : [[PSThreeUpViewController alloc] init],
+                         PSDemoKeyboardHelper : [[PSKeyboardDemoViewController alloc] init],
+                         PSDemoAutolayoutCell : [[PSMessagesViewController alloc] init],
+                         PSDemoDraggableViews : [[PSAnimatePositionViewController alloc] init],
+                         };
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
@@ -40,7 +47,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSString *demoName = self.demoScreens[indexPath.row];
+    NSString *demoName = [self.demoScreens allKeys][indexPath.row];
     cell.textLabel.text = demoName;
     
     return cell;
@@ -48,25 +55,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *demoName = self.demoScreens[indexPath.row];
-    
-    if ([demoName isEqualToString:@"KeyboardHelper"]) {
-        UIViewController *vc = [[PSKeyboardDemoViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    } else if ([demoName isEqualToString:@"ThreeUp"]) {
-        UIViewController *vc = [[PSThreeUpViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    } else if ([demoName isEqualToString:@"StaticCompose"]) {
-        UIViewController *vc = [[PSKeyboardDemoViewController alloc] initWithComposeButton];
-        [self.navigationController pushViewController:vc animated:YES];
-    } else if ([demoName isEqualToString:@"MessagingCell"]) {
-        UIViewController *vc = [[PSMessagesViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    } else if ([demoName isEqualToString:@"Animating Position"]) {
-        UIViewController *vc = [[PSAnimatePositionViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+    NSString *demoName = [self.demoScreens allKeys][indexPath.row];
     NSLog(@"%@", demoName);
+    
+    UIViewController *vc = self.demoScreens[demoName];
+    vc.title = demoName;
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
