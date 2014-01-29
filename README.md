@@ -1,4 +1,4 @@
-SHAutolayoutDemo
+Autolayout Demo
 ================
 
 Demo app showing Autolayout examples
