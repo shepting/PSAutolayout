@@ -1,4 +1,4 @@
-Autolayout Demo
+Auto Layout Demo
 ================
 
 Demo app showing Autolayout examples
