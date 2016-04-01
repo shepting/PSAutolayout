@@ -1,7 +1,7 @@
 Auto Layout Demo
 ================
 
-Demo app showing Autolayout examples
+Demo app showing Autolayout examples. Shows some interesting situations.
 
 ![Messaging Cell][screenshot1_thumb]
 ![Keyboard Helper][screenshot2_thumb]
